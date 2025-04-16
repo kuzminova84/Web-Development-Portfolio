@@ -1,0 +1,44 @@
+<mat-tab-group>
+    <!-- Breakfast Tab -->
+    <mat-tab label="🍳 Breakfast">
+      <div *ngIf="breakfast.length > 0; else noData">
+        <ul>
+          <li *ngFor="let item of breakfast">
+            <span>{{ getEmoji(item.name) }}</span> {{ item.name }} - ${{ item.price }} - {{ item.calories }} calories
+          </li>
+        </ul>
+      </div>
+      <ng-template #noData>
+        <p>😞 No breakfast items available.</p>
+      </ng-template>
+    </mat-tab>
+  
+    <!-- Lunch Tab -->
+    <mat-tab label="🥗 Lunch">
+      <div *ngIf="lunch.length > 0; else noData">
+        <ul>
+          <li *ngFor="let item of lunch">
+            <span>{{ getEmoji(item.name) }}</span> {{ item.name }} - ${{ item.price }} - {{ item.calories }} calories
+          </li>
+        </ul>
+      </div>
+      <ng-template #noData>
+        <p>😞 No lunch items available.</p>
+      </ng-template>
+    </mat-tab>
+  
+    <!-- Dinner Tab -->
+    <mat-tab label="🍽️ Dinner">
+      <div *ngIf="dinner.length > 0; else noData">
+        <ul>
+          <li *ngFor="let item of dinner">
+            <span>{{ getEmoji(item.name) }}</span> {{ item.name }} - ${{ item.price }} - {{ item.calories }} calories
+          </li>
+        </ul>
+      </div>
+      <ng-template #noData>
+        <p>😞 No dinner items available.</p>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+  
